@@ -16,7 +16,7 @@ Uniform amplitude estimates close the off-line gap, and finite-height certificat
 ---
 
 ### Repository structure
-- **RH_preprint_full.md** — main manuscript (formal proof)  
+- **RH_preprint.md** — main manuscript (formal proof)  
 - **data/** — constants, certified zeros, logs  
 - **code/** — smoothed AFE and verification scripts  
 - **figures/** — ridge and coherence plots  
