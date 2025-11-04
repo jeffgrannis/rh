@@ -1,0 +1,31 @@
+{
+  "title": "The Riemann Hypothesis via an Amplitude-Sensitive Lock on the Critical Line",
+  "creators": [
+    {
+      "name": "Jeffrey Grannis",
+      "affiliation": "Independent Researcher, Paris"
+    }
+  ],
+  "description": "Formal proof and reproducibility package for the Riemann Hypothesis formulated as an amplitude-sensitive resonance theorem. Includes constants, code, and certified logs.",
+  "keywords": [
+    "Riemann Hypothesis",
+    "analytic number theory",
+    "coherence functional",
+    "interval arithmetic",
+    "critical line",
+    "prime gaps"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "version": "v1.0_preprint",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/jeffgrannis/rh",
+      "relation": "isSupplementTo",
+      "resource_type": "publication"
+    }
+  ],
+  "access_right": "open",
+  "language": "eng"
+}
