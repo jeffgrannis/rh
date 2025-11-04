@@ -1,4 +1,5 @@
 # The Riemann Hypothesis via an Amplitude-Sensitive Lock on the Critical Line
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17522815.svg)](https://doi.org/10.5281/zenodo.17522815)
 
 **Author:** Jeffrey Grannis  
 **MSC (2020):** 11M26 · 11M06 · 11N05 · 65G40  
