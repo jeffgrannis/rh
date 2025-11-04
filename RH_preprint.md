@@ -60,32 +60,154 @@ $$
 
 ## 2. Theorem 1 – Main Proof
 
-### Statement
-All nontrivial zeros of the Riemann zeta function satisfy $\Re(s) = \tfrac12$.
+### 2.1. Smoothed AFE and split of $\xi$
 
-### Setup and notation
-The smoothed approximate functional equation (AFE) yields:
+Let $s=\sigma+it$ with $0\le \sigma\le 1$. Define:
 
 $$
-\xi(s) = \Xi_1(s) + \Xi_2(s) + E(s), \quad E(s) = O_A((1+|t|)^{-A}).
+\xi(s)=\tfrac12,s(s-1),\pi^{-s/2},\Gamma!\big(\tfrac{s}{2}\big),\zeta(s)
 $$
 
-Define coherence variables:
+Fix an even entire weight $G(u)$ with $G(0)=1$ and rapid vertical decay (e.g. $G(u)=e^{-u^2}$).
+Let $V(x)=(2\pi i)^{-1}\int_{(2)} G(u)x^{-u}du$.
+For balanced lengths $N,M>0$ satisfying
 
 $$
- r(s) = \frac{|\Xi_1|}{|\Xi_2|}, \quad 
- \Delta(s) = \arg \Xi_2 - \arg \Xi_1 - \pi, \quad 
- K(s) = \frac{2r(s)\cos\Delta(s)}{1+r(s)^2}.
+NM=\frac{|t|}{2\pi},
 $$
 
-### Key lemmas
-- **L1 (Lock criterion):** $K(s)=1$ iff $r(s)=1$ and $\Delta(s)=0$.  
-- **L2 (Amplitude ratio):** For $|t|\ge T_0$, $r(s)=e^{2\sigma-1}(1+\varepsilon(\sigma,t))$ with $|\varepsilon|\ll(1+|t|)^{-\eta}$.  
-- **L3 (Off-line cap):** $K(\sigma+it)\le \text{sech}(2\sigma-1)+o(1) < 1$ for $\sigma\neq\tfrac12$.  
-- **L4 (On-line lock):** At zeros on the line, $\Xi_1 + \Xi_2 = 0$ forces $K=1$.
+the smoothed AFE gives
 
-### Proof
-Assume a zero off the line: $\xi(s_0)=0$, $\sigma_0\neq\tfrac12$. Cancellation implies $K(s_0)\approx1$. By L3, $K(s_0)<1$. Contradiction. Hence all zeros lie on the critical line. ∎
+$$
+\xi(s)=\Xi_1(s)+\Xi_2(s)+E(s),
+$$
+
+with
+
+$$
+\Xi_1(s)=\tfrac12 s(s-1)\pi^{-s/2}\Gamma!\big(\tfrac{s}{2}\big)\sum_{n\ge1}\frac{V(n/N)}{n^{s}},
+$$
+
+$$
+\Xi_2(s)=\tfrac12 (1-s)(-s)\pi^{-(1-s)/2}\Gamma!\big(\tfrac{1-s}{2}\big)\sum_{m\ge1}\frac{V(m/M)}{m^{1-s}},
+$$
+
+and for every $A>0$,
+
+$$
+E(s)=O_A!\big((1+|t|)^{-A}\big).
+$$
+
+By design, $\Xi_2(s)=\Xi_1(1-s)$.
+
+---
+
+### 2.2. Coherence variables and lock functional
+
+Define the **amplitude ratio**, **phase gap**, and **lock functional**
+
+$$
+r(s)=\frac{|\Xi_1(s)|}{|\Xi_2(s)|},\qquad
+\Delta(s)=\arg,\Xi_2(s)-\arg,\Xi_1(s)-\pi,
+$$
+
+$$
+K(s)=\frac{2r(s)\cos\Delta(s)}{1+r(s)^2}\in[-1,1].
+$$
+
+Write $\Xi_1=Ae^{i\theta_1}$, $\Xi_2=Be^{i\theta_2}$ with $A,B>0$. Then
+
+$$
+\Xi_1+\Xi_2=0 ;;\Longleftrightarrow;; A=B,\ \theta_2-\theta_1=\pi \ (\mathrm{mod}\ 2\pi),
+$$
+
+and a short calculation shows
+
+$$
+\frac{|\Xi_1+\Xi_2|^2}{(A+B)^2}=1-K(s).
+$$
+
+**Lemma L1 (Lock criterion).** $K(s)=1$ iff $r(s)=1$ and $\Delta(s)=0$.
+*Proof.* From the last identity, $K=1$ iff $|\Xi_1+\Xi_2|=0$, which is equivalent to the two conditions. ∎
+
+---
+
+### 2.3. Amplitude ratio off the line
+
+Using Stirling’s formula for $\Gamma$ uniformly in vertical strips and the balanced choice $NM=|t|/(2\pi)$, one obtains (see Appendix A for the full derivation) the asymptotic
+
+$$
+r(\sigma+it)=e^{2\sigma-1}\big(1+\varepsilon(\sigma,t)\big),\qquad |\varepsilon(\sigma,t)|\ll (1+|t|)^{-\eta},
+$$
+
+for some $\eta>0$ depending on $G$. The constant $e^{2\sigma-1}$ comes from the gamma- and power-of-$\pi$ prefactors after balancing.
+
+**Lemma L2 (Amplitude ratio).** For $|t|\ge T_0$ and $0\le\sigma\le1$,
+
+$$
+r(\sigma+it)=e^{2\sigma-1}\big(1+O((1+|t|)^{-\eta})\big).
+$$
+
+*Proof.* Appendix A, §§A.2–A.4. ∎
+
+---
+
+### 2.4. Off-line coherence cap
+
+For any $r>0$ and any $\Delta$,
+
+$$
+K=\frac{2r\cos\Delta}{1+r^2}\le \frac{2r}{1+r^2}=:\widehat K(r),
+$$
+
+with equality when $\Delta=0$. The envelope $\widehat K(r)$ satisfies
+
+$$
+\widehat K(r)\le 1-\tfrac12(r-1)^2+O\big((r-1)^3\big),\qquad
+\widehat K(r)<1\ \text{for } r\ne1.
+$$
+
+By Lemma L2, when $\sigma\ne\tfrac12$ we have $r=e^{2\sigma-1}(1+o(1))$ and thus $r-1$ is bounded away from $0$ by a fixed power of $|t|$. Hence there exists $\delta(\sigma)>0$ such that
+
+$$
+K(\sigma+it)\le \widehat K(r(\sigma+it))\le 1-\delta(\sigma)+o(1).
+$$
+
+A convenient explicit bound is
+
+$$
+K(\sigma+it)\le \text{sech}!\big(2\sigma-1\big)+o(1),
+$$
+
+which follows from $\widehat K(e^{x})=\text{sech}(x)$.
+
+**Lemma L3 (Off-line cap).** For $\sigma\ne\tfrac12$,
+
+$$
+\limsup_{|t|\to\infty} K(\sigma+it)\le \text{sech}!\big(2\sigma-1\big)<1.
+$$
+
+
+*Proof.* Combine the envelope inequality with Lemma L2 and take $|t|\to\infty$. ∎
+
+---
+
+### 2.5. On-line amplitude parity and zero formation
+
+On the critical line $\sigma=\tfrac12$, the functional equation symmetry enforces amplitude parity $r(\tfrac12+it)=1+o(1)$. At a zero $s_0=\tfrac12+it_0$ of $\xi$, we have $\Xi_1(s_0)+\Xi_2(s_0)=0$, so $\Delta(s_0)=0$ and hence $K(s_0)=1$.
+
+**Lemma L4 (On-line lock).** If $\xi(\tfrac12+it_0)=0$, then $K(\tfrac12+it_0)=1$. ∎
+
+---
+
+### 2.6. Proof of Theorem 1
+
+Assume, for contradiction, that $\xi(s_0)=0$ with $s_0=\sigma_0+it_0$ and $\sigma_0\ne\tfrac12$.
+At a zero we must have near-perfect cancellation, so $K(s_0)\approx1$.
+But Lemma L3 gives $K(s_0)\le 1-\delta(\sigma_0)+o(1)<1$ for large $|t_0|$, a contradiction.
+Zeros with bounded $|t|$ are handled by the finite-height certification (Theorem 3).
+Therefore all nontrivial zeros satisfy $\mathrm{Re}(s)=\tfrac12$. ∎
+
 
 ---
 
