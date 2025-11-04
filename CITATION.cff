@@ -11,7 +11,7 @@ repository-code: "https://github.com/jeffgrannis/rh"
 license: "CC-BY-4.0"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.pending"
+    value: "10.5281/zenodo.17522815"
 keywords:
   - Riemann Hypothesis
   - amplitude ratio
